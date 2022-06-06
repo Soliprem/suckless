@@ -12,9 +12,9 @@ static unsigned int borderpx  = 1;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char font[]            = "monospace:size=10";
+static char font[]            = {"monospace:size=10"};
 static char dmenufont[]       = "monospace:size=10";
-static const char *fonts[]          = { font };
+static const char *fonts[]          = { font, "fontawesome-regular:size=10" };
 static char normbgcolor[]           = "#282828";
 static char normbordercolor[]       = "#282828";
 static char normfgcolor[]           = "#7c6f64";
@@ -129,6 +129,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = "st" } },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD(TERMINAL " -e nvim -c VimwikiIndex") },
+	{ MODKEY|Mod1Mask,              XK_q,      self_restart,     {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
