@@ -122,6 +122,7 @@ ResourcePref resources[] = {
 };
 
 
+#include "selfrestart.c"
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
