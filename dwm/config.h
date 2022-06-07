@@ -130,6 +130,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = "st" } },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD(TERMINAL " -e nvim -c VimwikiIndex") },
+	{ MODKEY,                       XK_r,      spawn,          SHCMD(TERMINAL " -e nnn") },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD(TERMINAL " -e btop") },
 	{ MODKEY|Mod1Mask,              XK_q,      self_restart,     {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
