@@ -13,7 +13,7 @@ static unsigned int snap      = 32;       /* snap pixel */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char font[]            = {"SauceCodePro Nerd Font:style=regular:pixelsize=14:antialias=true:autohint=true"};
-static char dmenufont[]       = "monospace:size=10";
+static char dmenufont[]       = "SauceCodePro Nerd Font:style=regular:pixelsize=14:antialias=true:autohint=true";
 static const char *fonts[]          = { font, "fontawesome-regular:size=10" };
 static char normbgcolor[]           = "#282828";
 static char normbordercolor[]       = "#282828";
