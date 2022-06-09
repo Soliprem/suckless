@@ -69,6 +69,7 @@ static const struct arg args[] = {
     {datetime, " | %s", "%F %T"},
     {run_command, " | %s", "sb-volume"},
     {run_command, " | %s ", "sb-internet"},
+    /* {run_command, " | %s ", "sb-battery"}, */
     /* { wifi_perc, "| %s ", "wlan0"}, */
     /* { vol_perc," | %s", "/dev/amixer"} */
     {run_command, "%s ", "echo '|'"},
