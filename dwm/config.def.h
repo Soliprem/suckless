@@ -99,6 +99,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run"}/* , "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL } */;
 static const char *termcmd[]  = {TERMINAL, NULL };
+static const char *browser[]  = {"firefox"};
 
 /*
  * Xresources preferences to load at startup
@@ -127,6 +128,7 @@ ResourcePref resources[] = {
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_w,      spawn,          {.v = browser } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = "st" } },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD(TERMINAL " -e nvim -c VimwikiIndex") },
