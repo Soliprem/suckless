@@ -14,7 +14,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char font[]            = {"SauceCodePro Nerd Font:style=regular:pixelsize=14:antialias=true:autohint=true"};
 static char dmenufont[]       = "SauceCodePro Nerd Font:style=regular:pixelsize=14:antialias=true:autohint=true";
-static const char *fonts[]          = { font, "fontawesome-regular:size=10" };
+static const char *fonts[]          = { font, "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
 static char normbgcolor[]           = "#282828";
 static char normbordercolor[]       = "#282828";
 static char normfgcolor[]           = "#7c6f64";
@@ -99,7 +99,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run"}/* , "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL } */;
 static const char *termcmd[]  = {TERMINAL, NULL };
-static const char *browser[]  = {"firefox"};
 
 /*
  * Xresources preferences to load at startup
@@ -127,14 +126,15 @@ ResourcePref resources[] = {
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_w,      spawn,          {.v = browser } },
+	{ MODKEY,                       XK_d,      spawn,          SHCMD("rofi -show run") },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("rofi -show drun") },
+	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = "st" } },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD(TERMINAL " -e nvim -c VimwikiIndex") },
 	{ MODKEY,                       XK_r,      spawn,          SHCMD(TERMINAL " -e nnn") },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD(TERMINAL " -e btop") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("dictionary") },
+	{ MODKEY,                       XK_g,      spawn,          SHCMD("wikipedia") },
 	{ 0,														XK_Print,	 spawn,				 	 SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
 	{ ShiftMask,										XK_Print,	 spawn,				 	 SHCMD("maimpick") },
 	{ MODKEY,												XK_Print,	 spawn,					 SHCMD("dmenurecord") },
