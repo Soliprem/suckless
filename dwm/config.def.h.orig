@@ -12,9 +12,9 @@ static unsigned int borderpx  = 1;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char font[]            = "monospace:size=10";
-static char dmenufont[]       = "monospace:size=10";
-static const char *fonts[]          = { font };
+static char font[]            = {"SauceCodePro Nerd Font:style=regular:pixelsize=14:antialias=true:autohint=true"};
+static char dmenufont[]       = "SauceCodePro Nerd Font:style=regular:pixelsize=14:antialias=true:autohint=true";
+static const char *fonts[]          = { font, "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
 static char normbgcolor[]           = "#282828";
 static char normbordercolor[]       = "#282828";
 static char normfgcolor[]           = "#7c6f64";
@@ -122,12 +122,27 @@ ResourcePref resources[] = {
 };
 
 
+#include "selfrestart.c"
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d,      spawn,          SHCMD("rofi -show run") },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("rofi -show drun") },
+	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = "st" } },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD(TERMINAL " -e nvim -c VimwikiIndex") },
+	{ MODKEY,                       XK_r,      spawn,          SHCMD(TERMINAL " -e nnn") },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD(TERMINAL " -e btop") },
+	{ MODKEY,                       XK_c,      spawn,          SHCMD("dictionary") },
+	{ MODKEY,                       XK_g,      spawn,          SHCMD("wikipedia") },
+	{ 0,														XK_Print,	 spawn,				 	 SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
+	{ ShiftMask,										XK_Print,	 spawn,				 	 SHCMD("maimpick") },
+	{ MODKEY,												XK_Print,	 spawn,					 SHCMD("dmenurecord") },
+	{ MODKEY|ShiftMask,							XK_Print,						 spawn,										 SHCMD("dmenurecord kill") },
+	{ MODKEY,												XK_Delete, spawn,					 SHCMD("dmenurecord kill") },
+	{ MODKEY,												XK_Scroll_Lock,	spawn,	 	 SHCMD("killall screenkey || screenkey &") },
+	{ 0,													  XF86XK_AudioPlay, spawn, 	 SHCMD("playerctl play-pause") },
+	{ MODKEY|Mod1Mask,              XK_q,      self_restart,     {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -201,7 +216,7 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,         Button1,        resizemouse,    {0} },
+	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
