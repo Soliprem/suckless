@@ -1,0 +1,4 @@
+cp: cannot remove '/usr/local/bin/slstatus'cp: cannot remove '/usr/local/bin/slstatus': Permission denied
+: Permission denied
+make: *** [Makefile:60: install] Error 1
+make: *** [Makefile:60: install] Error 1

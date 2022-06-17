@@ -1,0 +1,4 @@
+cp: cannot remove '/usr/local/bin/st': Permission denied
+cp: cannot remove '/usr/local/bin/st': Permission denied
+make: *** [Makefile:44: install] Error 1
+make: *** [Makefile:44: install] Error 1

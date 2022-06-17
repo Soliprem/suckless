@@ -1,0 +1,10 @@
+cp: cannot remove '/usr/local/bin/dmenu'cp: cannot remove '/usr/local/bin/dmenu': Permission denied
+cp: cannot remove '/usr/local/bin/dmenu_path': Permission denied
+cp: cannot remove '/usr/local/bin/dmenu_run': Permission denied
+cp: : Permission denied
+cp: cannot remove '/usr/local/bin/dmenu_path': Permission denied
+cp: cannot remove '/usr/local/bin/dmenu_run': Permission denied
+cp: cannot remove '/usr/local/bin/stest': Permission denied
+cannot remove '/usr/local/bin/stest': Permission denied
+make: *** [Makefile:45: install] Error 1
+make: *** [Makefile:45: install] Error 1

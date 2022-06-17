@@ -1,0 +1,4 @@
+cp: cannot remove '/usr/local/bin/dwm': Permission denied
+cp: cannot remove '/usr/local/bin/dwm': Permission denied
+make: *** [Makefile:41: install] Error 1
+make: *** [Makefile:41: install] Error 1
