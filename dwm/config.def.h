@@ -137,7 +137,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          SHCMD(TERMINAL " -e nnn") },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("alacritty" " -e btop") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("dictionary") },
-	{ MODKEY,                       XK_g,      spawn,          SHCMD("dm-dict") },
+	{ MODKEY,                       XK_g,      spawn,          SHCMD("dm-dictionary") },
 	{ 0,														XK_Print,	 spawn,				 	 SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
 	{ ShiftMask,										XK_Print,	 spawn,				 	 SHCMD("maimpick") },
 	{ MODKEY,												XK_Print,	 spawn,					 SHCMD("dmenurecord") },
