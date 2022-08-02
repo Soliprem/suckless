@@ -17,12 +17,21 @@ static int topbar             = 1;        /* 0 means bottom bar */
 static char font[]            = {"SauceCodePro Nerd Font:style=regular:pixelsize=14:antialias=true:autohint=true"};
 static char dmenufont[]       = "SauceCodePro Nerd Font:style=regular:pixelsize=14:antialias=true:autohint=true";
 static const char *fonts[]          = { font, "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
-static char normbgcolor[]           = "#282828";
-static char normbordercolor[]       = "#282828";
-static char normfgcolor[]           = "#7c6f64";
-static char selfgcolor[]            = "#ebdbb2";
-static char selbordercolor[]        = "#cc241d";
-static char selbgcolor[]            = "#458588";
+/* Gruvbox */
+ static char normbgcolor[]           = "#282828";
+ static char normbordercolor[]       = "#282828";
+ static char normfgcolor[]           = "#7c6f64";
+ static char selfgcolor[]            = "#ebdbb2";
+ static char selbordercolor[]        = "#cc241d";
+ static char selbgcolor[]            = "#458588"; 
+
+/* Pride */
+/* static char normbgcolor[]           = "#004cff"; */
+/* static char normbordercolor[]       = "#028121"; */
+/* static char normfgcolor[]           = "#ff8d00"; */
+/* static char selfgcolor[]            = "#FFEE00"; */
+/* static char selbordercolor[]        = "#770088"; */
+/* static char selbgcolor[]            = "#e50000"; */
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -54,6 +63,7 @@ static const Rule rules[] = {
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{"Alacritty",NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
 	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
